@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Заведём кота?</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 60px; }
+    h1 { font-size: 36px; }
+    img { border-radius: 12px; margin: 20px 0; max-width: 90%; }
+    button { font-size: 24px; padding: 15px 40px; margin: 20px; cursor: pointer; border: none; border-radius: 8px; }
+    #yes { background: #4CAF50; color: white; }
+    #no { background: #f44336; color: white; position: relative; }
+    #message { font-size: 22px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Заведём кота?</h1>
+
+  <img id="main-photo" src="cat5.jpg" alt="Рэгдол" width="400">
+
+  <div>
+    <button id="yes" onclick="sayYes()">Да</button>
+    <button id="no" onmouseover="moveNo()" ontouchstart="moveNo(); return false;">Нет</button>
+  </div>
+
+  <p id="message"></p>
+
+  <script>
+    let noCount = 0;
+
+    function sayYes() {
+      document.getElementById('message').textContent = '🎉 Ура! Кошка едет домой!';
+      document.getElementById('main-photo').src = 'cat-yes.jpg';
+    }
+
+    function moveNo() {
+      const noButton = document.getElementById('no');
+      noCount++;
+
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 80);
+      noButton.style.position = 'fixed';
+      noButton.style.left = x + 'px';
+      noButton.style.top = y + 'px';
+
+      if (noCount >= 5) {
+        noButton.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

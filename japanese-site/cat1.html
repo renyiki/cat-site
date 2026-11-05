@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Нам нужна кошка?</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+    h1 { font-size: 36px; }
+    button { font-size: 22px; padding: 12px 30px; margin: 10px; cursor: pointer; border: none; border-radius: 8px; background: #4CAF50; color: white; }
+    #next { font-size: 22px; display: none; margin-top: 30px; }
+    #next a { color: #4CAF50; text-decoration: none; }
+    #next a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>Нам нужна кошка?</h1>
+
+  <div>
+    <button onclick="showNext()">Да</button>
+    <button onclick="showNext()">Естественно</button>
+  </div>
+
+  <p id="next"><a href="cat2.html">Далее →</a></p>
+
+  <script>
+    function showNext() {
+      document.getElementById('next').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
